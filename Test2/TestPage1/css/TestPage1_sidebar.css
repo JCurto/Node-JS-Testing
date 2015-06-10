@@ -1,0 +1,13 @@
+#sideBar {
+	float: left;
+	
+	height: 100%;
+	width: 150px;
+	
+	border-top-style: solid;
+	border-right-style: solid;
+	border-color: white;
+	
+	
+	background-color: lightgray;
+}

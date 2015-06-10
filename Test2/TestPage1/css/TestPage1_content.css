@@ -1,0 +1,73 @@
+#contentContainer{
+	
+	margin-left: 153px;
+	margin-top: 3px;
+	
+	height: 100%;
+	
+	/*
+	border-style: solid none none solid;
+	border-color: greenyellow;
+	*/
+	
+	background-color: white;
+}
+
+#contentContainer h1{
+	margin: 10px;
+}
+
+
+#content{
+	height: 100%;
+	
+	/*
+	border-style: solid none none solid;
+	border-color: greenyellow;
+	*/
+	
+	background-color: white;
+}
+
+#content h1{
+	margin: 10px;
+}
+
+.line {
+	stroke: steelblue;
+	stroke-width: 2;
+	fill: none;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+  	stroke: #000;
+ 	shape-rendering: crispEdges;
+}
+
+.tick text {
+	font-size: 10px;
+}
+
+.tooltip {
+  background: #333;
+  box-shadow: 0 0 5px #999999;
+  color: whitesmoke;
+  display: none;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  min-width: 50px;
+  z-index: 10;
+}
+
+.voronoi {
+	fill: white;
+	stroke: dimgray;
+	stroke-width: 1px;
+	opacity: 0;
+}
