@@ -140,8 +140,8 @@ function datatesting(rent_data){
 			.style("stroke-width", "5px")
 			.attr("x1", x(d.date))
     		.attr("y1", y(d.value))
-    		.attr("x2", (d3.event.pageX - 150) + 'px')
-    		.attr("y2", (d3.event.pageY - 150) + 'px');
+    		.attr("x2", (d3.event.pageX - 160) + 'px')
+    		.attr("y2", (d3.event.pageY - 100) + 'px');
 		
 	}
 	
