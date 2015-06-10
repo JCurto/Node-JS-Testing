@@ -3,6 +3,8 @@ var app = express();
 
 app.use(express.static('index'));
 app.use(express.static('TestPage1'));
+app.use(express.static('z Libraries'));
+
 
 app.get('/', function (req, res) { });
 
