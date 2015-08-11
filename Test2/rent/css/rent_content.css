@@ -1,16 +1,14 @@
-#contentContainer{
-	
-	margin-left: 153px;
-	margin-top: 3px;
+#contentContainer{	
+	margin-left: 0px;
+	margin-top: 0px;
 	
 	height: 100%;
 	
-	/*
-	border-style: solid none none solid;
-	border-color: greenyellow;
-	*/
+	border-style: none;
 	
 	background-color: white;
+	
+	text-align: center;
 }
 
 #contentContainer h1{
@@ -20,13 +18,6 @@
 
 #content{
 	height: 100%;
-	
-	/*
-	border-style: solid none none solid;
-	border-color: greenyellow;
-	*/
-	
-	background-color: white;
 }
 
 #content h1{
@@ -42,12 +33,17 @@
 .axis path,
 .axis line {
 	fill: none;
-  	stroke: #000;
+  	stroke: black;
  	shape-rendering: crispEdges;
 }
 
 .tick text {
-	font-size: 10px;
+	font-size: 11px;
+	stroke: black;
+}
+
+.utility circle {
+	fill: black;
 }
 
 .tooltip {

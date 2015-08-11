@@ -13,5 +13,6 @@
 	{"month":"2015-Mar", "Electric":303, "Gas":295, "Water":95, "Internet":135},
 	{"month":"2015-Apr", "Electric":235, "Gas":207, "Water":0, "Internet":135},
 	{"month":"2015-May", "Electric":190, "Gas":130, "Water":0, "Internet":135},
-	{"month":"2015-Jun", "Electric":120, "Gas":68, "Water":92, "Internet":235}
+	{"month":"2015-Jun", "Electric":120, "Gas":68, "Water":92, "Internet":235},
+	{"month":"2015-Jul", "Electric":150, "Gas":48, "Water":0, "Internet":135}
 ]

@@ -6,6 +6,7 @@ var margin = {top: 20, right: 80, bottom: 30, left: 50},
 var svg = d3.select("#content").append("svg")
 			.attr("width", width + margin.left + margin.right)
 			.attr("height", height + margin.top + margin.bottom)
+			.attr("id", "svg_graph")
 		.append("g")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -49,10 +50,6 @@ tooltip.append('div')
 
 tooltip.append('div')
 	.attr('class', 'amount');
-
-var tooltipLine = svg
-	.append('line')
-	.attr('class', 'line');
 	
 // Voronoi Variables
 var voronoi = d3.geom.voronoi()
@@ -104,10 +101,21 @@ function datatesting(rent_data){
 		
 	var points = utility.selectAll("circle")
 		.data(function(d) { return d.values; })
-	  .enter().append("circle")
+	  .enter()
+	  
+	  points.append("circle")
 		.attr("r", 2)
       	.attr("cx", function(d) { return x(d.date); })
 		.attr("cy", function(d) { return y(d.value); });
+		
+	points.append("circle")
+		.attr("id", function(d, i) { return d.name + "-" + Math.floor(x(d.date)); })
+		.attr("r", 7)
+		.attr("cx", function(d) { return x(d.date); })
+		.attr("cy", function(d) { return y(d.value); })
+		.style("fill", "none")
+		.style("stroke", "none");
+		
 	
 	var voronoiGroup = svg.append("g")
 		.attr("class", "voronoi");
@@ -130,24 +138,19 @@ function datatesting(rent_data){
 		tooltip.select('.date').html(formatDate(d.date));
 		tooltip.select('.label').html(d.name);
 		tooltip.select('.amount').html("$" + d.value);
-		tooltip.style('top', (d3.event.pageY - 50) + 'px')
+		tooltip.style('top', (d3.event.pageY - 75) + 'px')
 			.style('left', (d3.event.pageX + 10) + 'px');
 		tooltip.style('display', 'block');
 		
-		tooltipLine
-			.style("display", "block")
-			.style("stroke", "black")
-			.style("stroke-width", "5px")
-			.attr("x1", x(d.date))
-    		.attr("y1", y(d.value))
-    		.attr("x2", (d3.event.pageX - 160) + 'px')
-    		.attr("y2", (d3.event.pageY - 100) + 'px');
-		
+		svg.select('#'+ d.name + "-" + Math.floor(x(d.date)))
+			.style("stroke", "black");
 	}
 	
 	function mouseout(d) {
 		tooltip.style('display', 'none');
-		tooltipLine.style('display', 'none');
+		svg.select('#'+ d.name + "-" + Math.floor(x(d.date)))
+			.style("stroke", "none");
+		
 	}
 		
 	utility.append("text")
